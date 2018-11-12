@@ -225,4 +225,8 @@ void fasta_read_payload_pair(char** first, char** second, FILE* in);
 
 void sseq_solve(FILE* in, FILE* out);
 
+/* 031-tran.c */
+
+void tran_solve(FILE* in, FILE* out);
+
 #endif
