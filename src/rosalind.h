@@ -229,4 +229,10 @@ void sseq_solve(FILE* in, FILE* out);
 
 void tran_solve(FILE* in, FILE* out);
 
+/* 032-tree.c */
+
+void io_skipline(FILE*);
+
+void tree_solve(FILE* in, FILE* out);
+
 #endif
