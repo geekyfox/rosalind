@@ -46,4 +46,17 @@ int io_readint(FILE* in);
 
 void fib_solve(FILE* in, FILE* out);
 
+/* 005-gc.c */
+
+struct fasta_pair {
+	char* label;
+	char* payload;
+};
+
+size_t fasta_read(struct fasta_pair* dst, size_t avail, size_t min, FILE* in);
+size_t fasta_read_payload(char** dst, size_t avail, size_t min, FILE* in);
+void fasta_free(struct fasta_pair*, size_t);
+
+void gc_solve(FILE* in, FILE* out);
+
 #endif
