@@ -27,4 +27,9 @@ void dna_increment_bases_count(struct dna_bases_counts*, char nucleobase);
 void dna_count_bases(struct dna_bases_counts*, const char* dna);
 void dna_solve(FILE *in, FILE *out);
 
+/* 002-rna.c */
+
+void rna_transcribe(char* rna, const char* dna);
+void rna_solve(FILE* in, FILE* out);
+
 #endif
