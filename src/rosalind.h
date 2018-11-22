@@ -40,4 +40,10 @@ void revc_complement(char* dna);
 char revc_complement_base(char nucleobase);
 void revc_solve(FILE* in, FILE* out);
 
+/* 004-fib.c */
+
+int io_readint(FILE* in);
+
+void fib_solve(FILE* in, FILE* out);
+
 #endif
