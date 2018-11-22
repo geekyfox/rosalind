@@ -68,4 +68,13 @@ void hamm_solve(FILE* in, FILE* out);
 
 void iprb_solve(FILE* in, FILE* out);
 
+/* 008-prot.c */
+
+#include <stdbool.h>
+
+extern char CODON_TABLE[64][5];
+
+bool prot_translate(char* protein, const char* rna);
+void prot_solve(FILE* in, FILE* out);
+
 #endif
