@@ -9,4 +9,22 @@
 bool has_solver(const char* key);
 void invoke(const char* key, FILE *in, FILE *out);
 
+/* 001-dna.c */
+
+#define IO_ALLOW_EOF 1
+
+size_t io_readline(char* str, size_t size, FILE* stream, int flags);
+size_t str_trim(char* str);
+
+struct dna_bases_counts {
+	int adenine;
+	int cytosine;
+	int guanine;
+	int thymine;
+};
+
+void dna_increment_bases_count(struct dna_bases_counts*, char nucleobase);
+void dna_count_bases(struct dna_bases_counts*, const char* dna);
+void dna_solve(FILE *in, FILE *out);
+
 #endif
