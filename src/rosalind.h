@@ -77,4 +77,9 @@ extern char CODON_TABLE[64][5];
 bool prot_translate(char* protein, const char* rna);
 void prot_solve(FILE* in, FILE* out);
 
+/* 009-subs.c */
+
+int subs_search(const char* haystack, const char* needle);
+void subs_solve(FILE* in, FILE* out);
+
 #endif
