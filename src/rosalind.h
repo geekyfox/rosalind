@@ -64,4 +64,8 @@ void gc_solve(FILE* in, FILE* out);
 int hamm_distance(const char *x, const char *y);
 void hamm_solve(FILE* in, FILE* out);
 
+/* 007-iprb.c */
+
+void iprb_solve(FILE* in, FILE* out);
+
 #endif
