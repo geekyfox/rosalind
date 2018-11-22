@@ -3,3 +3,4 @@ testdata/
 temp/
 rosalind
 rosalind.dSYM/
+*.swp

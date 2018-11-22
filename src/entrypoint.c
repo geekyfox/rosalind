@@ -8,33 +8,6 @@
 
 #include "rosalind.h"
 
-typedef void (*solver_t)(FILE*, FILE*);
-
-struct {
-	const char* key;
-	solver_t solver;
-} SOLVERS[] = {
-};
-
-solver_t lookup_solver(const char* key)
-{
-	int count = sizeof(SOLVERS) / sizeof(SOLVERS[0]);
-	for (int i=0; i<count; i++)
-		if (strcmp(key, SOLVERS[i].key) == 0)
-			return SOLVERS[i].solver;
-	return NULL;
-}
-
-void invoke(const char* key, FILE* in, FILE* out)
-{
-	solver_t solver = lookup_solver(key);
-	if (solver == NULL) {
-		fprintf(stderr, "No solver for problem %s\n", key);
-		return;
-	}
-	solver(in, out);
-}
-
 FILE* fopen_or_die(const char* filename, const char* mode)
 {
 	FILE* f = fopen(filename, mode);
@@ -60,23 +33,27 @@ void test_one_dataset(const char* puzzle_name, int dataset_id)
 
 	FILE* in = fopen_or_die(in_name, "r");
 	FILE* out = fopen_or_die(tmp_name, "w");    
+
+	sprintf(diff_cmd, "diff -b %s %s", out_name, tmp_name);
+	fprintf(stdout, "> %s\n", diff_cmd);
+	fflush(stdout);
+
 	invoke(puzzle_name, in, out);
 	fclose(in);
 	fclose(out);
     
 	if (access(out_name, F_OK) == 0) {
-		sprintf(diff_cmd, "diff -b %s %s", out_name, tmp_name);
 		if (system(diff_cmd) != 0) {
 			fprintf(stderr, "Test failed\n");
 			exit(1);
 		}
-		unlink(out_name);
+		unlink(tmp_name);
     	} else {
     		rename(tmp_name, out_name);
     	}
 }
 
-void test_suite(void)
+void test_suite(const char* problem)
 {
 	DIR* dir = opendir("testdata");
 	struct dirent entry, *result;
@@ -95,31 +72,37 @@ void test_suite(void)
 			perror("readdir_r()");
 			exit(1);
 		}
-		if (result == NULL) break;
+		if (result == NULL)
+			break;
 		const char* fmt = "rosalind_%[^_]_%d_%[^.].txt";
 		if (sscanf(entry.d_name, fmt, puzzle, &dataset_id, kind) != 3)
 			continue;
 		if (strcmp(kind, "dataset") != 0)
 			continue;
+		if (problem && (strcmp(problem, puzzle) != 0))
+			continue;
+		if (! has_solver(puzzle))
+			continue;
 		test_one_dataset(puzzle, dataset_id);
 	}
 	closedir(dir);
+	printf("All tests passed\n");	
 }
 
 int main(int argc, char** argv)
 {
 	if ((argc == 2) && (strcmp(argv[1], "test") == 0)) {
-		test_suite();
-		printf("All tests passed\n");
-		return 0;
-	}
-
-	if (argc == 3) {
+		test_suite(NULL);
+	} else if ((argc == 3) && (strcmp(argv[1], "test") == 0)) {
+		test_suite(argv[2]);
+	} else if (argc == 2) {
+		invoke(argv[1], stdin, stdout);
+	} else if (argc == 3) {
 		FILE* in = fopen_or_die(argv[2], "r");
 		invoke(argv[1], in, stdout);
 		fclose(in);
-		return 0;
+	} else {
+		printf("Usage: %s <problem name> [<dataset file>]\n", argv[0]);
 	}
-
-	printf("Usage: %s <problem name> <dataset file>\n", argv[0]);
+	return 0;
 }
