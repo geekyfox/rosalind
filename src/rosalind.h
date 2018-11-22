@@ -59,4 +59,9 @@ void fasta_free(struct fasta_pair*, size_t);
 
 void gc_solve(FILE* in, FILE* out);
 
+/* 006-hamm.c */
+
+int hamm_distance(const char *x, const char *y);
+void hamm_solve(FILE* in, FILE* out);
+
 #endif
