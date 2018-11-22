@@ -32,4 +32,12 @@ void dna_solve(FILE *in, FILE *out);
 void rna_transcribe(char* rna, const char* dna);
 void rna_solve(FILE* in, FILE* out);
 
+/* 003-revc.c */
+
+char* revc_apply(char* dna);
+void revc_reverse(char* ptr);
+void revc_complement(char* dna);
+char revc_complement_base(char nucleobase);
+void revc_solve(FILE* in, FILE* out);
+
 #endif
