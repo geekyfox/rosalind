@@ -90,4 +90,8 @@ void cons_solve(FILE* in, FILE* out);
 
 void fibd_solve(FILE* in, FILE* out);
 
+/* 012-grph.c */
+
+void grph_solve(FILE* in, FILE* out);
+
 #endif
