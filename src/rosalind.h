@@ -86,4 +86,8 @@ void subs_solve(FILE* in, FILE* out);
 
 void cons_solve(FILE* in, FILE* out);
 
+/* 011-fibd.c */
+
+void fibd_solve(FILE* in, FILE* out);
+
 #endif
