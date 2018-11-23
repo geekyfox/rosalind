@@ -235,4 +235,15 @@ void io_skipline(FILE*);
 
 void tree_solve(FILE* in, FILE* out);
 
+/* 033-cat.c */
+
+int** matrix_alloc(int rows, int cols);
+int** matrix_init(int rows, int cols, int fill);
+void matrix_free(int**);
+
+int modulo_add(int x, int y);
+void modulo_increment(int *x, int y);
+
+void cat_solve(FILE* in, FILE* out);
+
 #endif
