@@ -82,4 +82,8 @@ void prot_solve(FILE* in, FILE* out);
 int subs_search(const char* haystack, const char* needle);
 void subs_solve(FILE* in, FILE* out);
 
+/* 010-cons.c */
+
+void cons_solve(FILE* in, FILE* out);
+
 #endif
