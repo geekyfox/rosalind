@@ -106,4 +106,8 @@ void lcsm_solve(FILE* in, FILE* out);
 
 void lia_solve(FILE* in, FILE* out);
 
+/* 016-mprt.c */
+
+void mprt_solve(FILE* in, FILE* out);
+
 #endif
