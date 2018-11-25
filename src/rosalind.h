@@ -98,4 +98,8 @@ void grph_solve(FILE* in, FILE* out);
 
 void iev_solve(FILE* in, FILE* out);
 
+/* 014-lcsm.c */
+
+void lcsm_solve(FILE* in, FILE* out);
+
 #endif
