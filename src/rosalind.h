@@ -102,4 +102,8 @@ void iev_solve(FILE* in, FILE* out);
 
 void lcsm_solve(FILE* in, FILE* out);
 
+/* 015-lia.c */
+
+void lia_solve(FILE* in, FILE* out);
+
 #endif
