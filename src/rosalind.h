@@ -94,4 +94,8 @@ void fibd_solve(FILE* in, FILE* out);
 
 void grph_solve(FILE* in, FILE* out);
 
+/* 013-iev.c */
+
+void iev_solve(FILE* in, FILE* out);
+
 #endif
