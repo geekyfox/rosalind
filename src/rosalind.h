@@ -143,4 +143,16 @@ void intarr_print(FILE* out, const int* nums, size_t count);
 bool perm_next(int* nums, int n);
 void perm_solve(FILE* in, FILE* out);
 
+/* 020-prtm.c */
+
+struct aminoacid_mass {
+    char aminoacid;
+    double mass;
+};
+extern struct aminoacid_mass AMINOACID_MASSES[20];
+
+double aminoacid_to_mass(char aminoacid);
+
+void prtm_solve(FILE* in, FILE* out);
+
 #endif
