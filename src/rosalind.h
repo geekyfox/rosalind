@@ -116,4 +116,23 @@ int modulo_multiply(int x, int y);
 
 void mrna_solve(FILE* in, FILE* out);
 
+/* 018-orf.c */
+
+struct strarr {
+	int size;
+	int alc;
+	char** data;
+	bool own_mem;
+};
+
+void strarr_init(struct strarr *arr, bool own_mem);
+void strarr_add(struct strarr *arr, char *text);
+void strarr_sort(struct strarr *arr);
+void strarr_unique(struct strarr *set);
+void strarr_free(struct strarr *arr);
+
+char* fasta_read_payload_single(FILE* in);
+
+void orf_solve(FILE* in, FILE* out);
+
 #endif
