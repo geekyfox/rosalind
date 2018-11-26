@@ -110,4 +110,10 @@ void lia_solve(FILE* in, FILE* out);
 
 void mprt_solve(FILE* in, FILE* out);
 
+/* 017-mrna.c */
+
+int modulo_multiply(int x, int y);
+
+void mrna_solve(FILE* in, FILE* out);
+
 #endif
