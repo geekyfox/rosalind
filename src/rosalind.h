@@ -135,4 +135,12 @@ char* fasta_read_payload_single(FILE* in);
 
 void orf_solve(FILE* in, FILE* out);
 
+/* 019-perm.c */
+
+void intarr_swap(int* nums, int x, int y);
+void intarr_print(FILE* out, const int* nums, size_t count);
+
+bool perm_next(int* nums, int n);
+void perm_solve(FILE* in, FILE* out);
+
 #endif
