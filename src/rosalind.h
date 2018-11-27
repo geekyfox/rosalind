@@ -159,4 +159,8 @@ void prtm_solve(FILE* in, FILE* out);
 
 void revp_solve(FILE* in, FILE* out);
 
+/* 022-splc.c */
+
+void splc_solve(FILE* in, FILE* out);
+
 #endif
