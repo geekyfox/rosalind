@@ -155,4 +155,8 @@ double aminoacid_to_mass(char aminoacid);
 
 void prtm_solve(FILE* in, FILE* out);
 
+/* 021-revp.c */
+
+void revp_solve(FILE* in, FILE* out);
+
 #endif
