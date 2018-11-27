@@ -163,4 +163,11 @@ void revp_solve(FILE* in, FILE* out);
 
 void splc_solve(FILE* in, FILE* out);
 
+/* 023-lexf.c */
+
+size_t alphabet_read(char* str, size_t size, FILE* in);
+void alphabet_print_word(const int*, const char*, size_t, FILE* out);
+
+void lexf_solve(FILE* in, FILE* out);
+
 #endif
