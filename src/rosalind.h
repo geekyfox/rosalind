@@ -170,4 +170,8 @@ void alphabet_print_word(const int*, const char*, size_t, FILE* out);
 
 void lexf_solve(FILE* in, FILE* out);
 
+/* 024-lgis.c */
+
+void lgis_solve(FILE* in, FILE* out);
+
 #endif
