@@ -174,4 +174,8 @@ void lexf_solve(FILE* in, FILE* out);
 
 void lgis_solve(FILE* in, FILE* out);
 
+/* 025-long.c */
+
+void long_solve(FILE* in, FILE* out);
+
 #endif
