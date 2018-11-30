@@ -178,4 +178,30 @@ void lgis_solve(FILE* in, FILE* out);
 
 void long_solve(FILE* in, FILE* out);
 
+/* 026-pmch.c */
+
+struct rna_bases_counts {
+	int adenine;
+	int cytosine;
+	int guanine;
+	int uracil;
+};
+
+void rna_increment_bases_count(struct rna_bases_counts* ptr, char nucleobase);
+void rna_count_bases(struct rna_bases_counts*, const char* dna);
+
+struct bigint {
+	int* data;
+	int  size;
+	int  alc;
+};
+
+void bigint_normalize(struct bigint*);
+struct bigint bigint_wrap(int x);
+void bigint_free(struct bigint*);
+void bigint_mult(struct bigint* ptr, int x);
+void bigint_print(const struct bigint* ptr, FILE* out);
+
+void pmch_solve(FILE* in, FILE* out);
+
 #endif
