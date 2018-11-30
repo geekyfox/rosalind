@@ -204,4 +204,8 @@ void bigint_print(const struct bigint* ptr, FILE* out);
 
 void pmch_solve(FILE* in, FILE* out);
 
+/* 027-pper.c */
+
+void pper_solve(FILE* in, FILE* out);
+
 #endif
