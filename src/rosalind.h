@@ -208,4 +208,11 @@ void pmch_solve(FILE* in, FILE* out);
 
 void pper_solve(FILE* in, FILE* out);
 
+/* 028-prob.c */
+
+double prob_dna_with_gc_content(const char* dna, double gc_content);
+double prob_dna_with_gc_content_log(const char* dna, double gc_content);
+double prob_dna_with_gc_content_log10(const char* dna, double gc_content);
+void prob_solve(FILE* in, FILE* out);
+
 #endif
