@@ -219,4 +219,10 @@ void prob_solve(FILE* in, FILE* out);
 
 void sign_solve(FILE* in, FILE* out);
 
+/* 030-sseq.c */
+
+void fasta_read_payload_pair(char** first, char** second, FILE* in);
+
+void sseq_solve(FILE* in, FILE* out);
+
 #endif
