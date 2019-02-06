@@ -215,4 +215,8 @@ double prob_dna_with_gc_content_log(const char* dna, double gc_content);
 double prob_dna_with_gc_content_log10(const char* dna, double gc_content);
 void prob_solve(FILE* in, FILE* out);
 
+/* 029-sign.c */
+
+void sign_solve(FILE* in, FILE* out);
+
 #endif
